@@ -1,16 +1,12 @@
-def main():
-    print("Hello from repl-nix-workspace!")
-
-
-if __name__ == "__main__":
-    main()
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Memory Test App is running!"
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
+
+
